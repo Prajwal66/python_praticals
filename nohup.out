@@ -1,0 +1,13 @@
+Filesystem     512-blocks      Used Available Capacity iused      ifree %iused  Mounted on
+/dev/disk3s1s1  965595304  21875424 792182984     3%  412140 3960914920    0%   /
+devfs                 481       481         0   100%     832          0  100%   /dev
+/dev/disk3s6    965595304   6291496 792182984     1%       3 3960914920    0%   /System/Volumes/VM
+/dev/disk3s2    965595304  13439816 792182984     2%    1267 3960914920    0%   /System/Volumes/Preboot
+/dev/disk3s4    965595304      4624 792182984     1%      53 3960914920    0%   /System/Volumes/Update
+/dev/disk1s2      1024000     12328    985312     2%       1    4926560    0%   /System/Volumes/xarts
+/dev/disk1s1      1024000     11024    985312     2%      32    4926560    0%   /System/Volumes/iSCPreboot
+/dev/disk1s3      1024000      5616    985312     1%      65    4926560    0%   /System/Volumes/Hardware
+/dev/disk3s5    965595304 129463936 792182984    15%  694260 3960914920    0%   /System/Volumes/Data
+map auto_home           0         0         0   100%       0          0     -   /System/Volumes/Data/home
+nohup: priyanka.txt: No such file or directory
+nohup: run: No such file or directory
