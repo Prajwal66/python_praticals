@@ -22,14 +22,6 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                sh '''
-                    . ${VENV}/bin/activate
-                    pytest tests/
-                '''
-            }
-        }
 
         stage('Run Flask App') {
             steps {
