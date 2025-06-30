@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone repository') {
             steps {
-                git 'https://github.com/python_praticals
+               echo " cloned "
             }
         }
 
