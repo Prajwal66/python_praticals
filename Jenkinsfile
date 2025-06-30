@@ -1,0 +1,58 @@
+pipeline {
+    agent any
+
+    environment {
+        VENV = 'venv'
+    }
+
+    stages {
+        stage('Clone repository') {
+            steps {
+                git 'https://github.com/your-username/flask-jenkins-demo.git' // <-- Replace with your repo
+            }
+        }
+
+        stage('Setup Python Environment') {
+            steps {
+                sh '''
+                    python3 -m venv ${VENV}
+                    . ${VENV}/bin/activate
+                    pip install --upgrade pip
+                    pip install -r requirements.txt
+                '''
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh '''
+                    . ${VENV}/bin/activate
+                    pytest tests/
+                '''
+            }
+        }
+
+        stage('Run Flask App') {
+            steps {
+                sh '''
+                    . ${VENV}/bin/activate
+                    export FLASK_APP=app.py
+                    export FLASK_ENV=development
+                    nohup flask run --host=0.0.0.0 --port=5000 &
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline execution completed.'
+        }
+        success {
+            echo 'All steps succeeded.'
+        }
+        failure {
+            echo 'Build failed.'
+        }
+    }
+}
